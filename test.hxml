@@ -1,0 +1,18 @@
+-cp src
+-cp test
+-main Test 
+-neko bin/test.n
+-L hx3compat
+-resource test.xml@umltest
+
+--next
+--cmd neko ./bin/test.n
+
+--next
+-cp src
+-cp test
+-main Test 
+-js bin/test.js
+-L hx3compat
+-resource test.xml@umltest
+

@@ -1,0 +1,13 @@
+{
+    "name": "gstatem3",
+    "url" : "https://github.com/gsun/gstatem3",
+    "license": "Apache",
+    "tags": ["cross", "uml"],
+    "description": "macro-based state machine engine.",
+    "classPath": "src",
+    "version": "0.1.0",
+    "releasenote": "initial release",
+    "contributors": ["gsun"],
+    "dependencies": {
+  }
+}
