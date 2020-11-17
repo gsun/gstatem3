@@ -164,7 +164,7 @@ class SM {
               else if (behavior.entryExit != null) {
                   try {
                       #if debug trace("action: " + behavior.entryExit); #end
-                      Reflect.callMethod(context, Reflect.field(context, behavior.entryExit), []);
+                      Reflect.callMethod(context, Reflect.field(context, behavior.entryExit), [my_msg]);
                   } catch (err) {
                       my_excpt_event =  err.message;
                   }

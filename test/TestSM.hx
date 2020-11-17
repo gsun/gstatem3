@@ -19,7 +19,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event1, msg);
         assertEquals(cb.state, StateE);  
-        assertEquals(cb.path.toString(), ["entryd","entryc"].toString());
+        assertEquals(msg.path.toString(), ["entryd","entryc"].toString());
         #if debug trace("---------------------------------------"); #end
         
         //StateA Event1 guard1(true) 
@@ -30,7 +30,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event1, msg);
         assertEquals(cb.state, StateB);
-        assertEquals(cb.path.toString(), [].toString());
+        assertEquals(msg.path.toString(), [].toString());
         #if debug trace("---------------------------------------"); #end
         
         //StateA Event7 
@@ -38,7 +38,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event7, msg);
         assertEquals(cb.state, StateB);  
-        assertEquals(cb.path.toString(), [].toString());
+        assertEquals(msg.path.toString(), [].toString());
         #if debug trace("---------------------------------------"); #end
 
         //StateB Event3       
@@ -46,7 +46,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event3, msg);
         assertEquals(cb.state, StateB); 
-        assertEquals(cb.path.toString(), ["actionb"].toString());
+        assertEquals(msg.path.toString(), ["actionb"].toString());
         #if debug trace("---------------------------------------"); #end
         
         //StateB Event2
@@ -54,7 +54,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event2, msg);
         assertEquals(cb.state, StateA);            
-        assertEquals(cb.path.toString(), ["exitb"].toString());
+        assertEquals(msg.path.toString(), ["exitb"].toString());
         #if debug trace("---------------------------------------"); #end
  
         //StateE Event4 guard4(true)
@@ -62,7 +62,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event4, msg);
         assertEquals(cb.state, StateK); 
-        assertEquals(cb.path.toString(), ["action4","action3"].toString());
+        assertEquals(msg.path.toString(), ["action4","action3"].toString());
         #if debug trace("---------------------------------------"); #end
 
         //StateE Event4 guard3(true)
@@ -76,7 +76,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event4, msg);
         assertEquals(cb.state, StateJ); 
-        assertEquals(cb.path.toString(), ["action2"].toString());
+        assertEquals(msg.path.toString(), ["action2"].toString());
         #if debug trace("---------------------------------------"); #end
 
         //StateE Event4
@@ -87,7 +87,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event4, msg);
         assertEquals(cb.state, StateF); 
-        assertEquals(cb.path.toString(), ["entryf"].toString());
+        assertEquals(msg.path.toString(), ["entryf"].toString());
         #if debug trace("---------------------------------------"); #end
         
         //StateE Event8
@@ -95,7 +95,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event8, msg);
         assertEquals(cb.state, StateA);
-        assertEquals(cb.path.toString(), ["exitc","exitd"].toString());
+        assertEquals(msg.path.toString(), ["exitc","exitd"].toString());
         #if debug trace("---------------------------------------"); #end
   
         //StateF Event3
@@ -103,7 +103,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event3, msg);
         assertEquals(cb.state, StateF);  
-        assertEquals(cb.path.toString(), [].toString());
+        assertEquals(msg.path.toString(), [].toString());
         #if debug trace("---------------------------------------"); #end
         
         //StateF Event5
@@ -111,7 +111,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event5, msg);
         assertEquals(cb.state, StateE);  
-        assertEquals(cb.path.toString(), ["action1"].toString());
+        assertEquals(msg.path.toString(), ["action1"].toString());
         #if debug trace("---------------------------------------"); #end
         
         //StateF Event1 guard1(true)
@@ -119,7 +119,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event1, msg);
         assertEquals(cb.state, StateJ); 
-        assertEquals(cb.path.toString(), ["action2"].toString());
+        assertEquals(msg.path.toString(), ["action2"].toString());
         #if debug trace("---------------------------------------"); #end
 
         //StateF Event1 guard1(false)
@@ -130,7 +130,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event1, msg);
         assertEquals(cb.state, StateK); 
-        assertEquals(cb.path.toString(), ["action3"].toString());
+        assertEquals(msg.path.toString(), ["action3"].toString());
         #if debug trace("---------------------------------------"); #end
         
         //StateI Event8
@@ -138,7 +138,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event8, msg);
         assertEquals(cb.state, StateB);
-        assertEquals(cb.path.toString(), ["exiti","exitc","exitd"].toString());
+        assertEquals(msg.path.toString(), ["exiti","exitc","exitd"].toString());
         #if debug trace("---------------------------------------"); #end
         
         //StateK Event6
@@ -146,7 +146,7 @@ class TestSM  extends haxe.unit.TestCase {
         var msg = new TestMsg();
         cb.on(Event6, msg);
         assertEquals(cb.state, StateE);       
-        assertEquals(cb.path.toString(), ["exiti"].toString());
+        assertEquals(msg.path.toString(), ["exiti"].toString());
         #if debug trace("---------------------------------------"); #end
 
     }
